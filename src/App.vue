@@ -1,6 +1,8 @@
 <template lang="pug">
 
 #app
+	api-test
+	hr
 	users
 	hr
 	test(msg="Wubba lubba dub dub")
@@ -9,13 +11,14 @@
 
 <script>
 
+import ApiTest from "./components/ApiTest"
 import Test from "./components/Test"
 import Users from "./components/Users"
 
 export default {
 	name: 'app',
 	components: {
-		Test, Users
+		ApiTest, Test, Users
 	}
 }
 

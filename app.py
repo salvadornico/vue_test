@@ -18,4 +18,3 @@ def api():
 app.secret_key = "secret123"
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.run(debug=True)

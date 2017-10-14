@@ -5,9 +5,6 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
-
 # serve with hot reload at localhost:8080
 npm run dev
 
@@ -16,11 +13,8 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-```
 
-To start Flask back-end:
-
-```python
-$ export FLASK_DEBUG=1 && export FLASK_APP=app.py
-$ flask run
+# To start Flask back-end:
+export FLASK_DEBUG=1 && export FLASK_APP=app.py
+flask run
 ```

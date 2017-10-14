@@ -35,23 +35,7 @@ export default {
 	data() {
 		return {
 			newUser: {},
-			users: [
-				{
-					name: "Rick Sanchez",
-					email: "ricksanchez@gmail.com",
-					isSchwifty: true
-				},
-				{
-					name: "Birdperson",
-					email: "birdperson@gmail.com",
-					isSchwifty: false
-				},
-				{
-					name: "Squanchy",
-					email: "squanchy@gmail.com",
-					isSchwifty: false
-				},
-			]
+			users: []
 		}
 	},
 	methods: {
@@ -66,19 +50,26 @@ export default {
 		deleteUser: function(user) {
 			this.users.splice(this.users.indexOf(user), 1)
 		}
+	},
+	created: function() {
+		this.$http.get("https://jsonplaceholder.typicode.com/users")
+			.then(function(response) {
+				this.users = response.data;
+			})
 	}
 }
 
 </script>
 
 <style lang="stylus" scoped>
+table {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 
-table
-	position relative
-	left 50%
-	transform translateX(-50%)
-	.schwifty
-		text-decoration line-through
-
+	.schwifty {
+		text-decoration: line-through;
+	}
+}
 </style>
 
